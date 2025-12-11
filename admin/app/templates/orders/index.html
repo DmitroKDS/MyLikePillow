@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel= "stylesheet" type= "text/css" href="{{ url_for('static',filename='css/base/main.css') }}">
+    <link rel= "stylesheet" type= "text/css" href="{{ url_for('static',filename='css/messages|orders/main.css') }}">
+    <title>Адмін</title>
+
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static',filename='favicon.ico') }}">
+</head>
+<body>
+    <nav>
+        <a href="/">
+            <svg  xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-left"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M15 6l-6 6l6 6" /></svg>
+        </a>
+        <h1>Замовлення</h1>
+        <a onclick="window.location.reload()">
+            <svg  xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-refresh"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M20 11a8.1 8.1 0 0 0 -15.5 -2m-.5 -4v4h4" /><path d="M4 13a8.1 8.1 0 0 0 15.5 2m.5 4v-4h-4" /></svg>
+        </a>
+    </nav>
+    <div class="table">
+        <div class="column">
+            <input type="text" placeholder="Пошук" class="search" oninput="searchName(this)">
+            <h3>Не оплачені</h3>
+            <div class="h_underline" style="background-color:#c1c1c1"></div>
+            {% for id, request_id, full_name, pay_method, pil_size, pil_quantity, full_price, date, comment, status in orders.0 %}
+            <div class="item" onclick="window.location.href=`/orders/info/{{id}}`">
+                <div>
+                    <h4>{{full_name}}</h4>
+                    <h5>{{date}}</h5>
+                </div>
+                <h3>#{{request_id}}</h3>
+                <select onchange="openBanner({{id}}, this)">
+                    <option value="0" selected>Статус - не оплачений</option>
+                    <option value="1">Статус - оплачений</option>
+                    <option value="2">Статус - завершений</option>
+                </select>
+            </div>
+            {% endfor %}
+        </div>
+
+        <div class="column">
+            <input type="text" placeholder="Пошук" class="search" oninput="searchName(this)">
+            <h3>Оплачені</h3>
+            <div class="h_underline" style="background-color:#ffcc66"></div>
+            {% for id, request_id, full_name, pay_method, pil_size, pil_quantity, full_price, date, comment, status in orders.1 %}
+            <div class="item" onclick="window.location.href=`/orders/info/{{id}}`">
+                <div>
+                    <h4>{{full_name}}</h4>
+                    <h4>{{date}}</h4>
+                </div>
+                <h3>#{{request_id}}</h3>
+                <select onchange="openBanner({{id}}, this)">
+                    <option value="0">Статус - не оплачений</option>
+                    <option value="1" selected>Статус - оплачений</option>
+                    <option value="2">Статус - завершений</option>
+                </select>
+            </div>
+            {% endfor %}
+        </div>
+
+        <div class="column">
+            <input type="text" placeholder="Пошук" class="search" oninput="searchName(this)">
+            <h3>Завершені</h3>
+            <div class="h_underline" style="background-color:#99ff9b"></div>
+            {% for id, request_id, full_name, pay_method, pil_size, pil_quantity, full_price, date, comment, status in orders.2 %}
+            <div class="item" onclick="window.location.href=`/orders/info/{{id}}`">
+                <div>
+                    <h4>{{full_name}}</h4>
+                    <h4>{{date}}</h4>
+                </div>
+                <h3>#{{request_id}}</h3>
+                <select onchange="openBanner({{id}}, this)">
+                    <option value="0">Статус - не оплачений</option>
+                    <option value="1">Статус - оплачений</option>
+                    <option value="2" selected>Статус - завершений</option>
+                </select>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    
+    
+    <div class="banner_background">
+        <form method="post" action="" class="banner">
+            <h1>Ви точно хочете змінити статус</h1>
+            <div>
+                <button type="button" class="cancel" onclick="hideBanner()">Відмінити</button>
+                <button type="submit">Змінити</button>
+            </div>
+        </form>
+    </div>
+
+
+    <script>
+        function hideBanner(){
+            document.querySelector('.banner_background').style.display = 'none';
+        }
+
+        function openBanner(id, select){
+            document.querySelector('.banner_background form').action = `/orders/status_edit/${id}/${select.value}`;
+            document.querySelector('.banner_background').style.display = 'flex';
+        }
+
+        function searchName(search){
+            var items = search.parentElement.querySelectorAll('.item');
+            items.forEach((item) => {
+                var text = item.querySelector('h4').innerText.toLowerCase();
+                console.log(text);
+                if(text.includes(search.value.toLowerCase())){
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            })
+        }
+    </script>
+</body>
+</html>

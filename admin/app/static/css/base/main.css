@@ -1,0 +1,189 @@
+* {
+    margin:0;
+    font-family: Arial;
+    color: #375f9b;
+}
+
+html{
+    height: 100%;
+    position: relative;
+}
+
+body{
+    width: 100%;
+    height: 100%;
+}
+
+nav{
+    margin-top: 10px;
+    width:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+nav h1{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+nav a{
+    text-decoration: none;
+    background-color: #d3dae2;
+    border-radius: 999px;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+}
+
+nav a svg{
+    width: 20px;
+    height: 20px;
+}
+  
+nav a:hover {
+    background-color: #bccbdb;
+}
+
+nav button{
+    text-decoration: none;
+    background-color: #d3dae2;
+    border-radius: 40px;
+    padding: 10px 35px;
+    font-size: 16px;
+    border:none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+    gap:10px;
+}
+
+nav button svg{
+    width: 20px;
+    height: 20px;
+}
+  
+nav button:hover {
+    background-color: #bccbdb;
+}
+
+
+table{
+	font-size: 18px;
+    overflow-x: auto;
+    display: block;
+    width: auto;
+    border-radius: 5px;
+    border: none;
+    border-collapse: collapse
+}
+
+table td, table th {
+    border-bottom: 2px solid rgb(57, 67, 58);
+    text-align: left;
+    padding: 8px 20px;
+}
+
+table th {
+	font-size: 20px;
+    font-weight: 600;
+}
+
+.tr_0 td{
+    background-color: #c3c3c3;
+}
+
+
+.password{
+    display: flex;
+    align-items: center;
+    transition: all 0.3s;
+}
+
+.password button{
+    width: 40px;
+    height: 40px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    border-radius: 999px;
+    transition: all 0.3s;
+}
+
+.password button svg{
+    width: 20px;
+    height: 20px;
+}
+
+.password button:hover{
+    background-color: #d6d6d6;
+}
+
+
+.tableButton{
+    width: 40px;
+    height: 40px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    border-radius: 999px;
+    transition: all 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tableButton svg{
+    width: 20px;
+    height: 20px;
+}
+
+.tableButton:hover{
+    background-color: #d6d6d6;
+}
+
+img{
+    height: 150px;
+}
+
+.login{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    height: 100%;
+}
+
+.login button{
+    font-size: 16px;
+    padding: 10px 38px;
+    border: none;
+    border-radius: 10px;
+    background-color: #d3dae2;
+    text-decoration: none;
+}
+
+.login button:hover{
+    background-color: #bccbdb;
+}
+
+.login input{
+    margin-bottom: 20px;
+    border: 1px solid #375f9b;
+    width: 200px;
+    height:32px;
+    border-radius: 10px;
+    padding-left:10px;
+    font-size: 16px;
+}

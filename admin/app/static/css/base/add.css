@@ -1,0 +1,61 @@
+
+.banner_background{
+    position: fixed;
+    top:0;
+    left:0;
+    height: 100%;
+    width:  100%;
+    background-color: rgb(0, 0, 0, 0.6);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index:10;
+}
+
+.banner_background .banner{
+    max-width: 700px;
+    height: 160px;
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 20px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.banner_background .banner input{
+    margin-bottom: 20px;
+    border: 1px solid #375f9b;
+    width: 200px;
+    height:32px;
+    border-radius: 10px;
+    padding-left:10px;
+    font-size: 16px;
+}
+
+.banner_background h1{
+    text-align: center;
+    margin-bottom: 20px;
+	font-size: 20px;
+    font-weight: 600;
+}
+
+.banner div{
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}
+
+.banner_background button{
+    font-size: 16px;
+    padding: 10px 38px;
+    border: none;
+    border-radius: 10px;
+    background-color: #d3dae2;
+    text-decoration: none;
+}
+
+.banner_background button:hover{
+    background-color: #bccbdb;
+}

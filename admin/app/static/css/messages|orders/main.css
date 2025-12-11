@@ -1,0 +1,125 @@
+.table{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    gap: 2%;
+}
+
+.table .column{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+}
+
+.table .column .h_underline{
+    width: 350px;
+    height: 2px;
+    border-radius: 2px;
+    background-color: aqua;
+}
+
+.table .column .item{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    width: 350px;
+    background-color: #d3dae2;
+    transition: all 0.3s;
+}
+
+.table .column .item:hover {
+    background-color: #bccbdb;
+}
+
+
+.table .column .item div{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.table .column .item div h5{
+    color: #636971;
+}
+
+.table .column .item h3{
+    color: #81a4da;
+}
+
+.table .column .item select{
+    border: 1px solid #375f9b;
+    width: 100%;
+    height:22px;
+    border-radius: 5px;
+    padding-left:10px;
+    font-size: 13px;
+    background-color: #fff;
+    appearance: none;
+}
+
+
+
+.banner_background{
+    position: fixed;
+    top:0;
+    left:0;
+    height: 100%;
+    width:  100%;
+    background-color: rgb(0, 0, 0, 0.6);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index:10;
+}
+
+.banner_background .banner{
+    max-width: 700px;
+    height: 100px;
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 20px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.banner_background h1{
+    text-align: center;
+    margin-bottom: 20px;
+	font-size: 20px;
+    font-weight: 600;
+}
+
+.banner div{
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}
+
+.banner_background button{
+    font-size: 16px;
+    padding: 10px 38px;
+    border: none;
+    border-radius: 10px;
+    background-color: #d3dae2;
+    text-decoration: none;
+}
+
+.banner_background button:hover{
+    background-color: #bccbdb;
+}
+
+.search {
+    border: 1px solid #375f9b;
+    color: #777;
+    width: 250px;
+    height:26px;
+    border-radius: 6px;
+    padding-left:10px;
+    font-size: 12px;
+}

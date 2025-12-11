@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/base/main.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/base/add.css') }}">
+    <title>Адмін</title>
+
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static',filename='favicon.ico') }}">
+</head>
+<body>
+    <form method="post" class="login">
+        <h1>MyLikePillow Admin</h1>
+        <input type="text" name="username" placeholder="Юзернейм">
+        <input type="text" name="password" placeholder="Пароль">
+        <button type="submit">Увійти</button>
+    </form>
+    
+    <div class="banner_background">
+        <div class="banner">
+            <h1>Юзернейм або пароль не правильний</h1>
+            <div>
+                <button onclick="hideBanner()">Ок</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function hideBanner(){
+            document.querySelector('.banner_background').style.display = 'none';
+        }
+
+
+        if ("{{error}}"=="1"){
+            document.querySelector('.banner_background').style.display = 'flex';
+        }
+    </script>
+</body>
+</html>
