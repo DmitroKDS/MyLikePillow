@@ -1,0 +1,7 @@
+aiogram
+mysql-connector-python
+pillow
+pillow_heif
+rembg
+onnxruntime
+logging
